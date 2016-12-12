@@ -1,7 +1,7 @@
 {
   "name": "random-js-helpers.get",
   "version": "1.0.0",
-  "description": "Gets the value at a `path` of an `object`",
+  "description": "Gets the value at `path` of `object` (with an optional `default`)",
   "main": "src/index.js",
   "scripts": {
     "test": "abc test && abc lint",
