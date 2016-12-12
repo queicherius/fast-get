@@ -1,0 +1,28 @@
+{
+  "name": "random-js-helpers.get",
+  "version": "1.0.0",
+  "description": "Gets the value at a `path` of an `object`",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "abc test && abc lint",
+    "version": "abc build",
+    "build": "abc build",
+    "benchmark": "abc build && node benchmark/index.js"
+  },
+  "author": "queicherius@gmail.com",
+  "license": "MIT",
+  "keywords": [
+    "object",
+    "get",
+    "random-js-helpers"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/random-js-helpers/get.git"
+  },
+  "devDependencies": {
+    "abc-environment": "^1.1.0",
+    "benchmark": "^2.1.2",
+    "lodash.get": "^4.4.2"
+  }
+}
