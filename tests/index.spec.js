@@ -2,7 +2,7 @@
 import {expect} from 'chai'
 import _get from '../src/index.js'
 
-describe('random-js-helpers.get', () => {
+describe('fast-get', () => {
   it('should work with the path of an object', () => {
     let object = {foo: {bar: {herp: 123}}}
     expect(_get(object, 'foo.bar.herp')).to.equal(123)

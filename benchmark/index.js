@@ -12,7 +12,7 @@ suite
   .add('lodash.get', function () {
     lodash(object, 'foo.bar.herp' + Math.random())
   })
-  .add('random-js-helpers.get', function () {
+  .add('fast-get', function () {
     mine(object, 'foo.bar.herp' + Math.random())
   })
   .on('cycle', function (event) {
