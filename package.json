@@ -1,6 +1,6 @@
 {
   "name": "fast-get",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Gets the value at `path` of `object` (with an optional `default`)",
   "main": "src/index.js",
   "scripts": {
