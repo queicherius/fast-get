@@ -45,7 +45,7 @@ npm run benchmark
 |                       | Size (uglify + gzip) | Performance     |
 |-----------------------|----------------------|-----------------|
 | fast-get              | 237 bytes            | 498,648 ops/sec |
-| lodash.get            | 2145 bytes           | 120,422 ops/sec |
+| lodash.get            | 2,145 bytes           | 120,422 ops/sec |
 
 ## Licence
 
