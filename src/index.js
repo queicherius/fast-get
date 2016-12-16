@@ -10,7 +10,7 @@ export default function (object, path, defaultValue) {
   // Go through the path and check if we can access every requested key
   // The requested key gets grabbed while checking for efficiency
   const pathValid = cleanPath.every((step) => {
-    return (object = object[step]) !== undefined
+    return object && ((object = object[step]) !== undefined)
   })
 
   return pathValid ? object : defaultValue

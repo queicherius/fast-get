@@ -19,6 +19,22 @@ describe('fast-get', () => {
     expect(object, 'does not mutate input').to.deep.equal({foo: {bar: {herp: 123}}})
   })
 
+  it('should return `undefined` if part of an path of an object is falsy', () => {
+    let object = {foo: null}
+    expect(_get(object, 'foo.bar')).to.equal(undefined)
+    expect(object, 'does not mutate input').to.deep.equal({foo: null})
+
+    let object2 = {foo: false}
+    expect(_get(object2, 'foo.bar')).to.equal(undefined)
+    expect(object2, 'does not mutate input').to.deep.equal({foo: false})
+  })
+
+  it('should return `undefined` if part of an path of an object is not an object', () => {
+    let object = {foo: 'herp?'}
+    expect(_get(object, 'foo.bar')).to.equal(undefined)
+    expect(object, 'does not mutate input').to.deep.equal({foo: 'herp?'})
+  })
+
   it('should return the default if the path of an object does not exist', () => {
     let object = {foo: {bar: {herp: 123}}}
     expect(_get(object, 'foo.sup.flerp', 'the default')).to.equal('the default')
