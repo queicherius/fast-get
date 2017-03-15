@@ -21,7 +21,7 @@
     "url": "git+https://github.com/queicherius/fast-get.git"
   },
   "devDependencies": {
-    "abc-environment": "^1.1.0",
+    "abc-environment": "^2.0.0",
     "benchmark": "^2.1.2",
     "lodash.get": "^4.4.2"
   }
