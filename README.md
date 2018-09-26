@@ -16,7 +16,7 @@ This module can be used for Node.js as well as browsers using [Browserify](https
 ## Usage
 
 ```js
-import _get from 'fast-get'
+const _get = require('fast-get')
 
 const object = {a: [{b: {c: 3}}]}
 
@@ -44,8 +44,8 @@ npm run benchmark
 
 |                       | Size (uglify + gzip) | Performance     |
 |-----------------------|----------------------|-----------------|
-| fast-get              | 237 bytes            | 498,648 ops/sec |
-| lodash.get            | 2,145 bytes           | 120,422 ops/sec |
+| fast-get              | 159 bytes            | 555,897 ops/sec |
+| lodash.get            | 2,145 bytes          | 206,432 ops/sec |
 
 ## Licence
 
