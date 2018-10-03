@@ -1,7 +1,7 @@
 # fast-get
 
 [![Build Status](https://img.shields.io/travis/queicherius/fast-get.svg?style=flat-square)](https://travis-ci.org/queicherius/fast-get)
-[![Coverage Status](https://img.shields.io/codecov/c/github/queicherius/fast-get/master.svg?style=flat-square)](https://codecov.io/github/queicherius/fast-get)
+[![Coverage Status](https://img.shields.io/codecov/c/github/queicherius/fast-get/master.svg?style=flat-square)](https://codecov.io/github/queicherius/fast-get) [![Greenkeeper badge](https://badges.greenkeeper.io/queicherius/fast-get.svg)](https://greenkeeper.io/)
 
 > Gets the value at `path` of `object` (with an optional `default`)
 
