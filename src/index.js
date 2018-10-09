@@ -14,11 +14,16 @@ module.exports = function (object, path, defaultValue) {
     ? path
     : path.replace(regexCloseSquareBracket, '').replace(regexOpenSquareBracket, '.').split('.')
 
-  // Go through the path and check if we can access every requested key
-  // The requested key gets grabbed while checking for performance reasons
-  const pathValid = cleanPath.every((step) => {
-    return object && ((object = object[step]) !== undefined)
-  })
+  // Walk through the object
+  let current = object
 
-  return pathValid ? object : defaultValue
+  for (const segment of cleanPath) {
+    current = current[segment]
+
+    if (!current) {
+      return defaultValue
+    }
+  }
+
+  return current
 }
