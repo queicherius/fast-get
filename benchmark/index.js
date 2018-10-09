@@ -9,10 +9,16 @@ const object = { foo: { bar: { herp: 123 } } }
 
 // Run the modules against each other
 suite
-  .add('lodash.get', function () {
+  .add('lodash.get path', function () {
+    lodash(object, ['foo', 'bar', 'herp' + Math.random()])
+  })
+  .add('lodash.get string', function () {
     lodash(object, 'foo.bar.herp' + Math.random())
   })
-  .add('fast-get', function () {
+  .add('fast-get path', function () {
+    fastGet(object, ['foo', 'bar', 'herp' + Math.random()])
+  })
+  .add('fast-get string', function () {
     fastGet(object, 'foo.bar.herp' + Math.random())
   })
   .on('cycle', function (event) {

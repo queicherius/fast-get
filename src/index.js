@@ -1,3 +1,6 @@
+const regexCloseSquareBracket = /]|^\[/g
+const regexOpenSquareBracket = /\.?\[/g
+
 module.exports = function (object, path, defaultValue) {
   // Handle the case that the object is undefined or not an object
   if (!object || Object(object) !== object) {
@@ -7,15 +10,24 @@ module.exports = function (object, path, defaultValue) {
   // A) If the path is an array, we can just use that
   // B) If the path is a string, convert it into an array using migrating
   //    array-style `[foo]` accessors into object-style `.foo` accessors
-  const cleanPath = Object(path) === path
+  const cleanPath = Array.isArray(path)
     ? path
-    : path.replace(/]|^\[/g, '').replace(/\.?\[/g, '.').split('.')
+    : path.replace(regexCloseSquareBracket, '').replace(regexOpenSquareBracket, '.').split('.')
 
-  // Go through the path and check if we can access every requested key
-  // The requested key gets grabbed while checking for performance reasons
-  const pathValid = cleanPath.every((step) => {
-    return object && ((object = object[step]) !== undefined)
-  })
+  return get(object, cleanPath, defaultValue)
+}
 
-  return pathValid ? object : defaultValue
+function get (object, path, defaultValue) {
+  // Walk through the object
+  let current = object
+
+  for (const segment of path) {
+    current = current[segment]
+
+    if (!current) {
+      return defaultValue
+    }
+  }
+
+  return current
 }
