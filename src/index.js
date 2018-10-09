@@ -10,7 +10,7 @@ module.exports = function (object, path, defaultValue) {
   // A) If the path is an array, we can just use that
   // B) If the path is a string, convert it into an array using migrating
   //    array-style `[foo]` accessors into object-style `.foo` accessors
-  const cleanPath = Object(path) === path
+  const cleanPath = Array.isArray(path)
     ? path
     : path.replace(regexCloseSquareBracket, '').replace(regexOpenSquareBracket, '.').split('.')
 
