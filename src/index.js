@@ -14,10 +14,14 @@ module.exports = function (object, path, defaultValue) {
     ? path
     : path.replace(regexCloseSquareBracket, '').replace(regexOpenSquareBracket, '.').split('.')
 
+  return get(object, cleanPath, defaultValue)
+}
+
+function get (object, path, defaultValue) {
   // Walk through the object
   let current = object
 
-  for (const segment of cleanPath) {
+  for (const segment of path) {
     current = current[segment]
 
     if (!current) {
