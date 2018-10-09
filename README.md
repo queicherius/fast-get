@@ -42,10 +42,10 @@ npm test
 npm run benchmark
 ```
 
-|                       | Size (uglify + gzip) | Performance     |
-|-----------------------|----------------------|-----------------|
-| fast-get              | 159 bytes            | 555,897 ops/sec |
-| lodash.get            | 2,145 bytes          | 206,432 ops/sec |
+|            | Size (uglify + gzip) | Performance (array) | Performance (string) |
+|------------|----------------------|---------------------|----------------------|
+| fast-get   | 216 bytes            | 554,005 ops/sec     | 605,745 ops/sec      |
+| lodash.get | 2,145 bytes          | 810,509 ops/sec     | 200,565 ops/sec      |
 
 ## Licence
 
