@@ -3,15 +3,16 @@ const _get = require('../src/index.js')
 
 describe('fast-get', () => {
   it('should work with the path of an object', () => {
-    let object = { foo: { bar: { herp: 123 } } }
+    let object = { foo: { bar: { herp: 123, derp: 0 } } }
     expect(_get(object, 'foo.bar.herp')).toEqual(123)
     expect(_get(object, ['foo', 'bar', 'herp'])).toEqual(123)
-    expect(_get(object, 'foo.bar')).toEqual({ herp: 123 })
-    expect(_get(object, 'foo[bar]')).toEqual({ herp: 123 })
+    expect(_get(object, 'foo.bar')).toEqual({ herp: 123, derp: 0 })
+    expect(_get(object, 'foo[bar]')).toEqual({ herp: 123, derp: 0 })
     expect(_get(object, 'foo[bar[herp]]')).toEqual(123)
+    expect(_get(object, 'foo.bar.derp')).toEqual(0)
 
     // Does not mutate input
-    expect(object).toEqual({ foo: { bar: { herp: 123 } } })
+    expect(object).toEqual({ foo: { bar: { herp: 123, derp: 0 } } })
   })
 
   it('should return `undefined` if the path of an object does not exist', () => {

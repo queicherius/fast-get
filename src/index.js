@@ -23,7 +23,7 @@ function get (object, path, defaultValue) {
   for (const segment of path) {
     current = current[segment]
 
-    if (!current) {
+    if (current == null) {
       return defaultValue
     }
   }
