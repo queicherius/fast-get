@@ -4,7 +4,7 @@ const suite = new Benchmark.Suite()
 
 // Load the modules to compare and some default test object
 const lodash = require('lodash.get')
-const fastGet = require('../src/index.js')
+const fastGet = require('../dist/src/index.js')
 const object = { foo: { bar: { herp: 123 } } }
 
 // Run the modules against each other

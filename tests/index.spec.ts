@@ -1,5 +1,5 @@
 /* eslint-env jest */
-const _get = require('../src/index.js')
+const _get = require('../src/index')
 
 describe('fast-get', () => {
   it('should work with the path of an object', () => {

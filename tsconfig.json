@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "lib": ["es2015"],
+
+    "allowJs": false,
+    "noEmitOnError": true,
+
+    "declaration": true,
+    "sourceMap": false,
+    "outDir": "./dist",
+    "removeComments": true,
+
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": [
+    "src/**/*",
+    "tests/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

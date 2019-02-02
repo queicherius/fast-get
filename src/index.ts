@@ -1,7 +1,7 @@
 const regexCloseSquareBracket = /]|^\[/g
 const regexOpenSquareBracket = /\.?\[/g
 
-module.exports = function (object, path, defaultValue) {
+module.exports = function (object: any, path: Array<string | number> | string, defaultValue?: any) {
   // Handle the case that the object is undefined or not an object
   if (!object || Object(object) !== object) {
     return defaultValue
@@ -17,8 +17,8 @@ module.exports = function (object, path, defaultValue) {
   return get(object, cleanPath, defaultValue)
 }
 
-function get (object, path, defaultValue) {
-  let current = object
+function get (object: object, path: Array<string | number>, defaultValue: any) {
+  let current: any = object
 
   for (const segment of path) {
     current = current[segment]
